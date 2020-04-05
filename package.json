@@ -1,6 +1,6 @@
 {
   "name": "advanced-rpg-table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple embeadeable table and random generator tag.",
   "keywords": [
     "rpg"
@@ -27,7 +27,7 @@
     "e2e": "ng e2e",
     "build:elements": "ng build --prod --output-hashing none && node build-elements.js"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~9.1.0",
     "@angular/common": "~9.1.0",
