@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "advanced-rpg-table"
+    }
+  },
+  "defaultProject": "advanced-rpg-table",
+  "cli": {
+    "analytics": "799ec509-0b67-403b-8517-74d0905b3ad7"
+  }
 }
