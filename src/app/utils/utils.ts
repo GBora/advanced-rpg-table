@@ -26,7 +26,7 @@ export const getRandomSubject = (options: any[], headers: any[]): any[] => {
   return generated;
 }
 
-export const initTable = (source: any, tableData: any, headers: any, options: any, rows: any, generated: any): any[] => {
+export const initTable = (source: any, tableData: any, headers: any, options: any, rows: any): any[] => {
   if (source) {
     // Reset data
     tableData = null;
@@ -56,13 +56,13 @@ export const initTable = (source: any, tableData: any, headers: any, options: an
         rows.push(newRow);
       }
       // Build random
-      if (generated.length === 0) {
-        generated = getRandomSubject(options, headers);
-      }
+      // if (generated.length === 0) {
+      //   generated = getRandomSubject(options, headers);
+      // }
     } catch (e) {
       console.error(e);
     }
 
-    return [tableData, headers, options, rows, generated]
+    return [tableData, headers, options, rows]
   }
 }

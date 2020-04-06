@@ -26,8 +26,9 @@ export class AdvancedTableComponent implements OnInit {
     [this.tableData,
      this.headers,
      this.options,
-     this.rows,
-     this.generated] = initTable(this.source, this.tableData, this.headers, this.options, this.rows, this.generated);
+     this.rows] = initTable(this.source, this.tableData, this.headers, this.options, this.rows);
+
+     this.generated = getRandomSubject(this.options, this.headers);
   }
 
   generateNew() {
