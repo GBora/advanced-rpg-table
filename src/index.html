@@ -2,27 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>AdvancedRpgTable</title>
+  <title>Advanced Rpg Table</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <script>
-    weaponConfig = {
-      "type": ["dagger", "sword", "bow"],
-      "element": ["fire", "water", "air"],
-      "aligment": ["divine","infernal"]
+  <!-- <app-root></app-root> -->
+  <advanced-table subject="weapon">
+    {
+      "type": ["dagger", "sword", "bow", "spear"],
+      "element": ["fire", "water", "air", "mind"],
+      "aligment": ["divine","infernal","druidic"]
     }
+  </advanced-table>
 
-    shipConfig = {
+  <advanced-table subject="ship">
+    {
       "designation": ["scout", "trader", "warship", "colony ship", "science ship"],
       "weapons": ["laser", "plasma", "mass driver"],
       "engine": ["warp drive","hyper drive", "jump drive"],
       "captain": ["rookie", "veteran", "diplomat", "pirate"]
     }
-  </script>
-  <!-- <app-root></app-root> -->
-  <advanced-table subject="weapon" source="weaponConfig"></advanced-table>
+  </advanced-table>
 </body>
 </html>

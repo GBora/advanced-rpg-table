@@ -1,10 +1,11 @@
 {
   "name": "advanced-rpg-table",
-  "version": "1.0.3",
-  "description": "A simple embeadeable table and random generator tag.",
+  "version": "2.0.0",
+  "description": "A simple embeddable table and random generator for use with html.",
   "keywords": [
     "rpg"
   ],
+  "license": "MIT",
   "author": "George Bora <gpbora@gmail.com>",
   "repository": {
     "type": "git",

@@ -1,43 +1,47 @@
 # Advanced Rpg Table
 
-A simple embeadeable table and random generator tag.
+A simple embeddable table and random generator.
 
 ## Usage
 
 In your html:
 
-Before you write the table you have to link to this script (just once even if you have multiple pages), this might be in the head of the site but not necesarily.
+Before you write the table you have to link to this script, this might be in the head of the site but not necessarily.
 
 ```
 <script src="https://unpkg.com/advanced-rpg-table"></script>
-
 ```
 
-Then you need to configure what options your table will have, please follow this structure but you can have as manny
-configs (with as many options) and tables as you want
+Afterwards in your html just add the advanced table, being careful with the form of the text within the tag.
 
 ```
-  
-  <script>
-    // for fantasy
-    weaponConfig = {
-      "type": ["dagger", "sword", "bow"],
-      "element": ["fire", "water", "air"],
-      "aligment": ["divine","infernal"]
+  <advanced-table subject="weapon">
+    {
+      "type": ["dagger", "sword", "bow", "spear"],
+      "element": ["fire", "water", "air", "mind"],
+      "aligment": ["divine","infernal","druidic"]
     }
-    // or for sci fi
-    shipConfig = {
+  </advanced-table>
+```
+This should generate:
+
+![example](example.png)
+
+
+If the text within doesn't respect this form (it should be a JSON object) the table will not be generated correctly.
+
+Another example of a possible configuration:
+
+```
+  <advanced-table subject="ship">
+    {
       "designation": ["scout", "trader", "warship", "colony ship", "science ship"],
       "weapons": ["laser", "plasma", "mass driver"],
       "engine": ["warp drive","hyper drive", "jump drive"],
       "captain": ["rookie", "veteran", "diplomat", "pirate"]
     }
-  </script>
-
+  </advanced-table>
 ```
+## Previous versions
 
-Finnaly use the custom tag (web component) in your html, being carefull only for the source to reffer to an configuration you have allready written.
-
-```
-  <advanced-table subject="weapon" source="weaponConfig"></advanced-table>
-```
+Versions with 1.x.x required you to define the config in js then pass it to the tag, with 2.0.0 this has changed and it is a breaking change, the old code will remain on npm but if someone is using it I would advise to go to the latest version.

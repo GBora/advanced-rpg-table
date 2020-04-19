@@ -1,4 +1,11 @@
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import {
+  Component,
+  ViewEncapsulation,
+  Input,
+  ViewChild,
+  ElementRef,
+  AfterViewInit
+} from '@angular/core';
 import IOption from '../interfaces/IOption';
 import { initTable, getRandomSubject } from '../utils/utils';
 
@@ -8,10 +15,9 @@ import { initTable, getRandomSubject } from '../utils/utils';
   styleUrls: ['./advanced-table.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom
 })
-export class AdvancedTableComponent implements OnInit {
+export class AdvancedTableComponent implements AfterViewInit {
 
   @Input() subject: string;
-  @Input() source: string;
 
   showTable: boolean = false;
   tableData: any;
@@ -20,16 +26,9 @@ export class AdvancedTableComponent implements OnInit {
   rows: any[] = [];
   generated: IOption[] = [];
 
+  @ViewChild('contentWrapper') content: ElementRef;
+
   constructor() { }
-
-  ngOnInit(): void {
-    [this.tableData,
-     this.headers,
-     this.options,
-     this.rows] = initTable(this.source, this.tableData, this.headers, this.options, this.rows);
-
-     this.generated = getRandomSubject(this.options, this.headers);
-  }
 
   generateNew() {
     this.generated = getRandomSubject(this.options, this.headers);
@@ -37,6 +36,18 @@ export class AdvancedTableComponent implements OnInit {
 
   toggleTable() {
     this.showTable =  !this.showTable;
+  }
+
+  ngAfterViewInit(): void {
+    let text = this.content.nativeElement.firstChild.textContent;
+    let parsed = JSON.parse(text);
+
+    [this.tableData,
+     this.headers,
+     this.options,
+     this.rows] = initTable(parsed, this.tableData, this.headers, this.options, this.rows);
+
+     this.generated = getRandomSubject(this.options, this.headers);
   }
 
 }
