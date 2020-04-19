@@ -9,7 +9,7 @@ In your html:
 Before you write the table you have to link to this script, this might be in the head of the site but not necessarily.
 
 ```
-<script src="https://unpkg.com/advanced-rpg-table"></script>
+<script src="https://unpkg.com/advanced-rpg-table" type="module"></script>
 ```
 
 Afterwards in your html just add the advanced table, being careful with the form of the text within the tag.
